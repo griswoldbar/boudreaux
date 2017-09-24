@@ -1,0 +1,12 @@
+#main-container.container-fluid
+  .row
+    #alerts-box.col-xs-9
+  .row
+    #response-box.col-xs-9
+  .row
+    #input-box.col-xs-9
+      = form_with(model: @command, url: run_path ) do |f|
+        = f.label '>'
+        = f.text_field :command, autocomplete: 'off'
+        = f.hidden_field :game_id, value: params[:id]
+        = f.submit style: "display: none;"
